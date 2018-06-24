@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Movie>
+
+@section scripts{
+    <script src="~/AngularApp/dist/polyfills.js"></script>
+    <script src="~/AngularApp/dist/styles.js"></script>
+    <script src="~/AngularApp/dist/vendor.js"></script>
+    <script src="~/AngularApp/dist/runtime.js"></script>
+    <script src="~/AngularApp/dist/main.js"></script>
+}
+
+<div class="jumbotron top-space">
+    <div class="container">
+        <app-root></app-root>
+        @*  <h1 class="text-center thin">Store</h1>
+            <h3 class="text-center thin">Buy movies here!</h3>
+            <p class="text-center thin">Count: @Model.Count()</p>
+            <div class="row">
+
+                @foreach (var m in Model)
+                {
+                    <div class="col-md-3 col-sm-6 highlight">
+                        <div class="well well-lg">
+                            <div class="h-caption">
+                                <h4><i class="fa fa-video-camera fa-5"></i>@m.MovieName</h4>
+                            </div>
+                            <div class="h-body text-center">
+                                <p>
+                                    <a href="#" target="_blank"><img src="~/assets/images/@(m.MovieName).png" alt="" class="img-rounded" width="600" height="300"></a>
+                                </p>
+                                <p>Director:- @m.DirectorName</p>
+                                <p>Actor:- @m.ActorName</p>
+                                <p>Genre:- @m.Genre</p>
+                                <p>Release Date:- @m.ReleaseDate</p>
+                                <p>Unit Price:- $@m.Price</p>
+
+                                <button class="btn btn-success"> Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>*@
+    </div>
+</div>

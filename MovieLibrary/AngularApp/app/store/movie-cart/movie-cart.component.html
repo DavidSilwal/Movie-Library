@@ -1,0 +1,28 @@
+<h3>Movie Cart</h3>
+Individual Movies Count: {{dataService.movieOrder.items.length}}
+<br />
+Total: {{dataService.movieOrder.total | currency:"USD":true }}
+
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <td>Movie</td>
+            <td>Director Name</td>
+            <td>Release Date</td>
+            <td>Unit Price</td>
+            <td>Quantity</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of dataService.movieOrder.items">
+            <td>{{m.movieMovieName}}</td>
+            <td>{{m.movieDirectorName}}</td>
+            <td>{{m.movieReleaseDate}}</td>
+            <td>{{m.price | currency:"USD":true}}</td>
+            <td>{{m.quantity}}</td>
+            <td>{{(m.price * m.quantity) | currency:"USD":true}}</td>
+        </tr>
+    </tbody>
+</table>
+<a routerLink="checkout" class="btn btn-success" *ngIf="dataService.movieOrder.items.length > 0" (click)="onChekout()"> Checkout</a>
